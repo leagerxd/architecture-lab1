@@ -23,4 +23,8 @@ func getCurrentTime(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonData)
 }
 
-func main() {}
+func main() {
+	http.HandleFunc("/current-time", getCurrentTime)
+	fmt.Println("Server started on port 8795")
+	http.ListenAndServe(":8795", nil)
+  }
