@@ -13,7 +13,7 @@ type JSONTime struct {
 
 func getCurrentTime(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Got request")
-	currentTime := JSONTime{Time: time.Now().Format(time.RFC3339)}
+	currentTime := JSONTime{Time: time.Now().Format(time.RFC3339)} //  Get the current time and format it
 	jsonData, err := json.Marshal(currentTime)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
