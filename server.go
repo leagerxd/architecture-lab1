@@ -24,7 +24,7 @@ func getCurrentTime(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/current-time", getCurrentTime)
+	http.HandleFunc("/time", getCurrentTime)
 	fmt.Println("Server started on port 8795")
 	http.ListenAndServe(":8795", nil)
-  }
+}
